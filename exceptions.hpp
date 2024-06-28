@@ -24,19 +24,35 @@ public:
 };
 
 class index_out_of_bound : public exception {
-    /* __________________________ */
+public:
+    index_out_of_bound(const std::string &msg = "") {
+        detail = msg;
+        const_cast<std::string&>(variant) = "Index Out of Bound";
+    }
 };
 
 class runtime_error : public exception {
-    /* __________________________ */
+public:
+    runtime_error(const std::string &msg = "") {
+        detail = msg;
+        const_cast<std::string&>(variant) = "Runtime Error";
+    }
 };
 
 class invalid_iterator : public exception {
-    /* __________________________ */
+public:
+    invalid_iterator(const std::string &msg = "") {
+        detail = msg;
+        const_cast<std::string&>(variant) = "Invalid Iterator";
+    }
 };
 
 class container_is_empty : public exception {
-    /* __________________________ */
+public:
+    container_is_empty(const std::string &msg = "") {
+        detail = msg;
+        const_cast<std::string&>(variant) = "Container is Empty";
+    }
 };
 }
 
